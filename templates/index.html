@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="manifest" href="/public/manifest.webmanifest" />
+</head>
+<body>
+    <h1>Welcome to home page</h1>
+<script>
+    if ('serviceWorker' in navigator) {
+      // Register a service worker hosted at the root of the
+      // site using the default scope.
+      navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+        console.log('Service worker registration succeeded:', registration);
+      }, /*catch*/ function(error) {
+        console.log('Service worker registration failed:', error);
+      });
+    } else {
+      console.log('Service workers are not supported.');
+    }
+  </script>
+</body>
+</html>
